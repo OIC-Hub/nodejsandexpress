@@ -1,6 +1,8 @@
 const http = require('http');
+const path = require('path')
 const express = require('express')
 const app = express()
+app.use(express.static(path.join(__dirname, 'public')))
 const userRoute = require('./routes/users')
 // app.use( (req, res, next)=>{
 //     console.log('First MIddleware')

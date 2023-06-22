@@ -6,7 +6,7 @@ router.get('/', (req, res)=>{
    res.sendFile(path.join(__dirname, '../', 'views', 'index.html'))
 })
 router.get('/services', (req, res)=>{
-    res.send('<p> Our Services </p>')
+    res.sendFile(path.join(__dirname, '../', 'views', 'services.html'))
 })
 
 module.exports= router
