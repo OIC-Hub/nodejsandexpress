@@ -1,7 +1,11 @@
 const http = require('http');
 const path = require('path')
 const express = require('express')
+const bodyParser = require('body-parser');
+const productsRoutes= require('./routes/products')
 const app = express()
+app.set('view engine', 'ejs')
+app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname, 'public')))
 const userRoute = require('./routes/users')
 // app.use( (req, res, next)=>{
@@ -19,4 +23,5 @@ const userRoute = require('./routes/users')
 //     res.send('Add product')
 // })
 app.use(userRoute)
+app.use(productsRoutes)
 app.listen(8000)
